@@ -66,20 +66,20 @@
 'special' = "amber-800" # Special symbols e.g `?` in Rust, `...` in Hare.
 'attribute' = "rose-800" # Class attributes, html tag attributes.
 
-'type' = "cyan-400" # Variable type, like integer or string, including program defined classes, structs etc..
-'type.builtin' = "cyan-800" # Primitive types of the language (string, int, float).
-'type.enum.variant' = "cyan-500" # A variant of an enum.
+'type' = "amber-400" # Variable type, like integer or string, including program defined classes, structs etc..
+'type.builtin' = "purple-300" # Primitive types of the language (string, int, float).
+'type.enum.variant' = "cyan-400" # A variant of an enum.
 
 'constructor' = "yellow-600" # Constructor method for a class or struct.
 
-'constant' = "orange-400" # Constant value
-'constant.builtin' = "orange-500" # Special constants like `true`, `false`, `none`, etc.
-'constant.builtin.boolean' = "orange-600" # True or False.
+'constant' = "amber-300" # Constant value
+'constant.builtin' = "amber-500" # Special constants like `true`, `false`, `none`, etc.
+'constant.builtin.boolean' = "amber-600" # True or False.
 'constant.character' = "amber-600" # Constant of character type.
 'constant.character.escape' = "amber-400" # escape codes like \n.
-'constant.numeric'  = "orange-700" # constant integer or float value.
-'constant.numeric.integer' = "orange-800" # constant integer value.
-'constant.numeric.float' = "orange-900" # constant float value.
+'constant.numeric'  = "orange-600" # constant integer or float value.
+'constant.numeric.integer' = "orange-500" # constant integer value.
+'constant.numeric.float' = "orange-400" # constant float value.
 
 'string' = "lime-600" # String literal.
 'string.regexp' = "lime-600" # Regular expression literal.
@@ -94,9 +94,9 @@
 'comment.block.documentation' = "stone-300" # Doc comments, e.g '///' in rust.
 
 'variable' = "stone-300" # Variable names.
-'variable.builtin' = "stone-500" # Language reserved variables: `this`, `self`, `super`, etc.
-'variable.parameter' = "amber-600" # Function parameters.
-'variable.other.member' = "orange-400" # Fields of composite data types (e.g. structs, unions).
+'variable.builtin' = "orange-500" # Language reserved variables: `this`, `self`, `super`, etc.
+'variable.parameter' = "amber-500" # Function parameters.
+'variable.other.member' = "slate-300" # Fields of composite data types (e.g. structs, unions).
 
 'label' = "rose-800" # Loop labels, among other things.
 
@@ -107,9 +107,9 @@
 'keyword' = "red-600" # Language reserved keywords.
 'keyword.control' = "indigo-600" # Control keywords.
 'keyword.control.conditional' = "violet-600" # `if`, `else`, `elif`.
-'keyword.control.repeat' = "violet-400" # `for`, `while`, `loop`.
-'keyword.control.import' = "purple-400" # `import`, `export` `use`.
-'keyword.control.return' = "red-600" # `return` in most languages.
+'keyword.control.repeat' = "violet-300" # `for`, `while`, `loop`.
+'keyword.control.import' = "purple-300" # `import`, `export` `use`.
+'keyword.control.return' = "red-400" # `return` in most languages.
 'keyword.control.exception' = "slate-400" # `try`, `catch`, `raise`/`throw` and related.
 'keyword.operator' = "slate-300" # `or`, `and`, `in`.
 'keyword.directive' = "stone-500" # Preprocessor directives (#if in C...).
@@ -119,7 +119,7 @@
 
 'function' = "emerald-300"
 'function.builtin' = "indigo-400"
-'function.method' = "cyan-400" # Class / Struct methods.
+'function.method' = "cyan-600" # Class / Struct methods.
 'function.macro' = "sky-400"
 'function.special' = "sky-300" # Preprocessor function in C.
 
