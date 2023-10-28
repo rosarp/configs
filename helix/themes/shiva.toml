@@ -8,7 +8,7 @@
 'hint' = "emerald-400" # Code diagnostics hints (LSP).
 'info' = "blue-400" # Contextual info in diagnostic messages (LSP).
 'warning' = "yellow-400" # Editor warnings.
-'error' = "red-900" # Editor errors, like mis-typing a command.
+'error' = "red-500" # Editor errors, like mis-typing a command.
 'diagnostic' = { underline = { style = "line" } } # Code diagnostics in editing area (LSP).
 'diagnositc.hint' = { underline = { color = "emerald-400", style = "dotted" } }
 'diagnositc.info' = { underline = { color = "blue-400", style = "dotted" } }
@@ -28,12 +28,12 @@
 
 'ui.cursor' = { fg = "zinc-800", bg = "sky-300" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
 'ui.cursor.primary' = { fg = "zinc-800", bg = "gray-300" } # The primary cursor when there are multiple (shift-c).
-'ui.cursor.insert' = { fg = "zinc-800", bg = "orange-300" } # The cursor in insert mode (i).
-'ui.cursor.select' = { fg = "zinc-800", bg = "lime-300" } # The cursor in select mode (v).
-'ui.cursor.match' = { fg = "zinc-800", bg = "sky-300", modifiers = ["bold"] } # The matching parentheses of that under the cursor.
+'ui.cursor.primary.insert' = { fg = "zinc-800", bg = "orange-300" } # The cursor in insert mode (i).
+'ui.cursor.primary.select' = { fg = "zinc-800", bg = "lime-300" } # The cursor in select mode (v).
+'ui.cursor.match' = { fg = "zinc-800", bg = "yellow-300", modifiers = ["bold"] } # The matching parentheses of that under the cursor.
 
 'ui.selection' = { fg = "zinc-800", bg = "slate-400" } # All currently selected text.
-'ui.selection.primary' = { fg = "neutral-300", bg = "amber-900" } # The primary selection when there are multiple.
+'ui.selection.primary' = { fg = "neutral-300", bg = "amber-900", modifiers = ["bold"] } # The primary selection when there are multiple.
 
 'ui.linenr' = "slate-400" # Line numbers.
 'ui.linenr.selected' = { fg = "slate-300", bg = "gray-700" } # Current line number.
@@ -53,7 +53,7 @@
 'ui.highlight' = "gray-200" # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b).
 
 'ui.menu' = { fg = "stone-300", bg = "stone-800" } # Autocomplete menu.
-'ui.menu.selected' = { fg = "stone-300", bg = "stone-800", modifiers = ["bold"] } # Selected autocomplete item.
+'ui.menu.selected' = { fg = "stone-800", bg = "stone-300", modifiers = ["bold"] } # Selected autocomplete item.
 
 'ui.popup' = { fg = "cyan-300", bg = "stone-800" } # Documentation popups (space-k).
 'ui.popup.info' = { fg = "orange-300", bg = "stone-800" } # Info popups box (space mode menu).
@@ -140,19 +140,19 @@
 'markup.heading.6' = { fg = "gray-100", modifiers = ["bold"] } # Markdown heading 6 color.
 'markup.heading.marker' = "gray-600" # Hashtag color on Markdown headings.
 
-'markup.list' = "blue-600"
-'markup.list.numbered' = "blue-600" # Numbered list.
-'markup.list.unnumbered' = "blue-600" # Bullet point list.
+'markup.list' = "blue-500"
+'markup.list.numbered' = "blue-400" # Numbered list.
+'markup.list.unnumbered' = "sky-400" # Bullet point list.
 
 'markup.bold' = { modifiers = ["bold"] } # Bold text.
 'markup.italic' = { modifiers = ["italic"] } # Italicised text.
 
 'markup.link' = "blue-600"
 'markup.link.url' = { fg = "blue-200", modifiers = ["italic"] } # Urls pointed to by links.
-'markup.link.label' = "sky-600" # Non-URL link references.
-'markup.link.text' = "sky-600" # URL and image descriptions in links.
+'markup.link.label' = "sky-400" # Non-URL link references.
+'markup.link.text' = "teal-400" # URL and image descriptions in links.
 
-'markup.quote' = "blue-600" # `> Quotes` in Markdown.
+'markup.quote' = "lime-600" # `> Quotes` in Markdown.
 
 
 # Markup - Interface ==============================
