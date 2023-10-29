@@ -23,8 +23,8 @@
 'ui.gutter' = { fg = "gray-400", bg = "gray-900" } # Left gutter for diagnostics and breakpoints.
 
 'ui.text' = "neutral-50" # Default text color.
-'ui.text.focus' = "neutral-600" # Selection highlight in buffer-picker or file-picker.
-'ui.text.info' = "neutral-400" # Info popup contents (space mode menu).
+'ui.text.focus' = { fg = "yellow-400", bg = "stone-900" } # Selection highlight in buffer-picker or file-picker.
+'ui.text.info' = { fg = "green-400", bg = "stone-900" } # Info popup contents (space mode menu).
 
 'ui.cursor' = { fg = "zinc-800", bg = "sky-300" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
 'ui.cursor.primary' = { fg = "zinc-800", bg = "gray-300" } # The primary cursor when there are multiple (shift-c).
@@ -41,6 +41,7 @@
 'ui.virtual' = { fg = "blue-900" } # Namespace for additions to the editing area.
 'ui.virtual.ruler' = { bg = "stone-900" } # Vertical rulers (colored columns in editing area).
 'ui.virtual.whitespace' = { fg = "blue-900" } # Whitespace markers in editing area.
+'ui.virtual.wrap' = "yellow-400" # Soft Text Wrap
 
 'ui.statusline' = { fg = "yellow-400", bg = "gray-900" } # Status line.
 'ui.statusline.inactive' = { fg = "orange-400", bg = "gray-800" } # Status line in unfocused windows.
