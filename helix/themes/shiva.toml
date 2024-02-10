@@ -5,32 +5,32 @@
 
 # GENERAL ==============================
 
-'hint' = "emerald-400" # Code diagnostics hints (LSP).
-'info' = "blue-400" # Contextual info in diagnostic messages (LSP).
-'warning' = "yellow-400" # Editor warnings.
-'error' = "red-500" # Editor errors, like mis-typing a command.
-'diagnostic' = { underline = { style = "line" } } # Code diagnostics in editing area (LSP).
+'diagnositc.error' = { underline = { color = "red-400", style = "curl" } }
 'diagnositc.hint' = { underline = { color = "emerald-400", style = "dotted" } }
 'diagnositc.info' = { underline = { color = "blue-400", style = "dotted" } }
 'diagnositc.warning' = { underline = { color = "yellow-400", style = "curl" } }
-'diagnositc.error' = { underline = { color = "red-400", style = "curl" } }
+'diagnostic' = { underline = { style = "line" } } # Code diagnostics in editing area (LSP).
+'error' = "red-500" # Editor errors, like mis-typing a command.
+'hint' = "emerald-400" # Code diagnostics hints (LSP).
+'info' = "blue-400" # Contextual info in diagnostic messages (LSP).
+'warning' = "yellow-400" # Editor warnings.
 
 # UI ==============================
 # For styling helix itself.
 
 'ui.background' = { bg = "gray-800" } # Default background color.
-'ui.window' = { fg = "slate-400", bg = "slate-900" } # Window border between splits.
 'ui.gutter' = { fg = "gray-400", bg = "gray-900" } # Left gutter for diagnostics and breakpoints.
+'ui.window' = { fg = "slate-400", bg = "slate-900" } # Window border between splits.
 
 'ui.text' = "neutral-50" # Default text color.
 'ui.text.focus' = { fg = "yellow-400", bg = "stone-900" } # Selection highlight in buffer-picker or file-picker.
 'ui.text.info' = { fg = "green-400", bg = "stone-900" } # Info popup contents (space mode menu).
 
 'ui.cursor' = { fg = "zinc-800", bg = "sky-300" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
+'ui.cursor.match' = { fg = "zinc-800", bg = "yellow-300", modifiers = ["bold"] } # The matching parentheses of that under the cursor.
 'ui.cursor.primary' = { fg = "zinc-800", bg = "gray-300" } # The primary cursor when there are multiple (shift-c).
 'ui.cursor.primary.insert' = { fg = "zinc-800", bg = "orange-300" } # The cursor in insert mode (i).
 'ui.cursor.primary.select' = { fg = "zinc-800", bg = "lime-300" } # The cursor in select mode (v).
-'ui.cursor.match' = { fg = "zinc-800", bg = "yellow-300", modifiers = ["bold"] } # The matching parentheses of that under the cursor.
 
 'ui.selection' = { fg = "zinc-800", bg = "slate-400" } # All currently selected text.
 'ui.selection.primary' = { fg = "neutral-300", bg = "amber-900", modifiers = ["bold"] } # The primary selection when there are multiple.
@@ -39,15 +39,18 @@
 'ui.linenr.selected' = { fg = "slate-300", bg = "gray-700" } # Current line number.
 
 'ui.virtual' = { fg = "blue-900" } # Namespace for additions to the editing area.
+'ui.virtual.inlay-hint' = "sky-600" # Default style for inlay hints of all kinds
+'ui.virtual.inlay-hint.parameter' = "lime-500" # Style for inlay hints of kind parameter (LSPs are not required to set a kind)
+'ui.virtual.inlay-hint.type' = "cyan-600" # Style for inlay hints of kind type (LSPs are not required to set a kind)
 'ui.virtual.ruler' = { bg = "stone-900" } # Vertical rulers (colored columns in editing area).
 'ui.virtual.whitespace' = { fg = "blue-900" } # Whitespace markers in editing area.
 'ui.virtual.wrap' = "yellow-400" # Soft Text Wrap
 
+"ui.statusline.insert" = { fg = "blue-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.normal" = { fg = "amber-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.select" = { fg = "fuchsia-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during select mode (only if editor.color-modes is enabled)
 'ui.statusline' = { fg = "yellow-400", bg = "gray-900" } # Status line.
 'ui.statusline.inactive' = { fg = "orange-400", bg = "gray-800" } # Status line in unfocused windows.
-"ui.statusline.normal" = { fg = "amber-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
-"ui.statusline.insert" = { fg = "blue-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during insert mode (only if editor.color-modes is enabled)
-"ui.statusline.select" = { fg = "fuchsia-400", bg = "gray-900", modifiers = ["bold"] } # Statusline mode during select mode (only if editor.color-modes is enabled)
 
 'ui.help' = { fg = "orange-300", bg = "stone-800" } # `:command` descriptions above the command line.
 
@@ -79,49 +82,49 @@
 'constant.character' = "amber-600" # Constant of character type.
 'constant.character.escape' = "amber-400" # escape codes like \n.
 'constant.numeric'  = "orange-600" # constant integer or float value.
-'constant.numeric.integer' = "orange-500" # constant integer value.
 'constant.numeric.float' = "orange-400" # constant float value.
+'constant.numeric.integer' = "orange-500" # constant integer value.
 
 'string' = "lime-600" # String literal.
 'string.regexp' = "lime-600" # Regular expression literal.
 'string.special' = "lime-600" # Strings containing a path, URL, etc.
 'string.special.path' = "lime-600" # String containing a file path.
-'string.special.url' = "lime-600" # String containing a web URL.
 'string.special.symbol' = "lime-600" # Erlang/Elixir atoms, Ruby symbols, Clojure keywords.
+'string.special.url' = "lime-600" # String containing a web URL.
 
 'comment' = "gray-400" # This is a comment.
-'comment.line' = "gray-700" # Line comments, like this.
 'comment.block' = "gray-500" # Block comments, like /* this */ in some languages.
 'comment.block.documentation' = "stone-300" # Doc comments, e.g '///' in rust.
+'comment.line' = "gray-700" # Line comments, like this.
 
 'variable' = "stone-300" # Variable names.
 'variable.builtin' = "orange-500" # Language reserved variables: `this`, `self`, `super`, etc.
-'variable.parameter' = "amber-500" # Function parameters.
 'variable.other.member' = "slate-300" # Fields of composite data types (e.g. structs, unions).
+'variable.parameter' = "amber-500" # Function parameters.
 
 'label' = "rose-800" # Loop labels, among other things.
 
 'punctuation' = "green-300" # Any punctuation symbol.
-'punctuation.delimiter' = "lime-400" # Commas, colons or other delimiter depending on the language.
 'punctuation.bracket' = "emerald-500" # Parentheses, angle brackets, etc.
+'punctuation.delimiter' = "lime-400" # Commas, colons or other delimiter depending on the language.
 
 'keyword' = "red-600" # Language reserved keywords.
 'keyword.control' = "indigo-600" # Control keywords.
 'keyword.control.conditional' = "violet-600" # `if`, `else`, `elif`.
-'keyword.control.repeat' = "violet-300" # `for`, `while`, `loop`.
-'keyword.control.import' = "purple-300" # `import`, `export` `use`.
-'keyword.control.return' = "red-400" # `return` in most languages.
 'keyword.control.exception' = "slate-400" # `try`, `catch`, `raise`/`throw` and related.
-'keyword.operator' = "slate-300" # `or`, `and`, `in`.
+'keyword.control.import' = "purple-300" # `import`, `export` `use`.
+'keyword.control.repeat' = "violet-300" # `for`, `while`, `loop`.
+'keyword.control.return' = "red-400" # `return` in most languages.
 'keyword.directive' = "stone-500" # Preprocessor directives (#if in C...).
 'keyword.function' = "indigo-300" # The keyword to define a function: 'def', 'fun', 'fn'.
+'keyword.operator' = "slate-300" # `or`, `and`, `in`.
 
 'operator' = "neutral-400" # Logical, mathematical, and other operators.
 
 'function' = "emerald-300"
 'function.builtin' = "indigo-400"
-'function.method' = "cyan-600" # Class / Struct methods.
 'function.macro' = "sky-400"
+'function.method' = "cyan-600" # Class / Struct methods.
 'function.special' = "sky-300" # Preprocessor function in C.
 
 'tag' = "sky-300" # As in <body> for html, css tags.
@@ -149,9 +152,9 @@
 'markup.italic' = { modifiers = ["italic"] } # Italicised text.
 
 'markup.link' = "blue-600"
-'markup.link.url' = { fg = "blue-200", modifiers = ["italic"] } # Urls pointed to by links.
 'markup.link.label' = "sky-400" # Non-URL link references.
 'markup.link.text' = "teal-400" # URL and image descriptions in links.
+'markup.link.url' = { fg = "blue-200", modifiers = ["italic"] } # Urls pointed to by links.
 
 'markup.quote' = "lime-600" # `> Quotes` in Markdown.
 
@@ -175,10 +178,10 @@
 # Diff ==============================
 # Version control changes.
 
-'diff.plus' = "green-600" # Additions.
-'diff.minus' = "red-600" # Deletions.
 'diff.delta' = "blue-600" # Modifications.
 'diff.delta.moved' = "blue-600" # Renamed or moved files.
+'diff.minus' = "red-600" # Deletions.
+'diff.plus' = "green-600" # Additions.
 
 
 [palette] # Define your custom colors here.
