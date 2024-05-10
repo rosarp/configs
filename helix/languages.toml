@@ -1,0 +1,24 @@
+# upcoming llm lsp for rust
+# [language-server.llm-lsp]
+# command = "llm-lsp"
+
+[[language]]
+name = "rust"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [
+  "rust-analyzer",
+  # "llm-lsp",
+]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.rust-analyzer.config.procMacro.ignored]
+leptos_macro = ["server"]
+
+[language-server.rust-analyzer.rustfmt]
+overrideCommand = ["leptosfmt", "--stdin", "--rustfmt"]
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }

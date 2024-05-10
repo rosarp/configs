@@ -1,0 +1,38 @@
+theme = "shiva"
+
+[editor]
+# Show currently open buffers, only when more than one exists.
+bufferline = "multiple"
+# Highlight all lines with a cursor
+cursorline = true
+line-number = "relative"
+mouse = false
+rulers = [120]
+true-color = true
+text-width = 120
+
+[editor.cursor-shape]
+insert = "block"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[editor.lsp]
+# Disable automatically popups of signature parameter help
+auto-signature-help = false
+# Show LSP messages in the status line
+display-messages = true
+# Display inlay hints
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+A-w = ":buffer-close"
