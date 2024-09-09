@@ -92,10 +92,10 @@
 'string.special.symbol' = "lime-600" # Erlang/Elixir atoms, Ruby symbols, Clojure keywords.
 'string.special.url' = "lime-600" # String containing a web URL.
 
-'comment' = "gray-400" # This is a comment.
-'comment.block' = "gray-500" # Block comments, like /* this */ in some languages.
-'comment.block.documentation' = "stone-300" # Doc comments, e.g '///' in rust.
-'comment.line' = "gray-700" # Line comments, like this.
+'comment' = "gray-600" # This is a comment.
+'comment.block' = "zinc-600" # Block comments, like /* this */ in some languages.
+'comment.block.documentation' = "stone-600" # Doc comments, e.g '///' in rust.
+'comment.line' = "neutral-600" # Line comments, like this.
 
 'variable' = "stone-300" # Variable names.
 'variable.builtin' = "orange-500" # Language reserved variables: `this`, `self`, `super`, etc.
