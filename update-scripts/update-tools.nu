@@ -14,7 +14,7 @@ def main [] {
     dfxvm update
   }
 
-  if (false) {
+  if (true) {
     bun upgrade --stable
   }
 }
@@ -65,11 +65,16 @@ def "main update_zls" [] {
     let git_out = (git pull origin master)
     print $git_out
     if "Already up to date." != $git_out {
-      zig build -Doptimize=ReleaseFast
-      rm ~/bin/zls
-      cp ./zig-out/bin/zls ~/bin/zls
+      zig build -Doptimize=ReleaseSafe
+      if ('~/bin/zig-linux-x86_64/zls' | path exists) {
+        rm ~/bin/zig-linux-x86_64/zls
+      }
+      cp ./zig-out/bin/zls ~/bin/zig-linux-x86_64/zls
+      if ('~/bin/zls' | path exists) {
+        rm ~/bin/zls
+      }
+      ln -s ~/bin/zig-linux-x86_64/zls ~/bin/zls
     }
-    cd ~/
   } else {
     print "To install zls, download repo and update above path"
   }
