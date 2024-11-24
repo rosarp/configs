@@ -1,0 +1,29 @@
+#!/usr/bin/env nu
+
+def main [] {
+}
+
+def "main create template" [path_to_binary: string] {
+	#create the apparmor template
+	sudo aa-easyprof ($path_to_binary)
+}
+
+def "main enforce" [profile_name: string] {
+	#To enforce the profile
+	sudo apparmor_parser -a /etc/apparmor.d/($profile_name)
+}
+
+def "main complain mode" [profile_name: string] {
+	#Load a new profile in complain mode
+	sudo apparmor_parser -C /etc/apparmor.d/($profile_name)
+}
+
+def "main replace" [profile_name: string] {
+	#Replace existing profile
+	sudo apparmor_parser -r /etc/apparmor.d/($profile_name)
+}
+
+def "main remmove" [profile_name: string] {
+	#Remove profile
+	sudo apparmor_parser -R /etc/apparmor.d/($profile_name)
+}

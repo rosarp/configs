@@ -64,25 +64,39 @@ def "main update_zls" [] {
   # expect zls src at ~/workspace/zig-workspace/repository/zls/
   if ('~/workspace/zig-workspace/repository/zls/' | path exists) {
     cd ~/workspace/zig-workspace/repository/zls/
-    let git_out = (git pull origin master --depth=1)
+    let git_out = (git pull origin master --depth=1 --allow-unrelated-histories)
     print $git_out
-    cp ./zig-out/bin/zls ./zls-bak
-    if "Already up to date." != $git_out {
-      zig build -Doptimize=ReleaseSafe
+    if ('./zig-out/bin/zls' | path exists ) {
+      cp ./zig-out/bin/zls ./zls-bak
+    }
+    if "fatal: refusing to merge unrelated histories" == $git_out or "fatal: Not possible to fast-forward, aborting." == $git_out {
+      print "if not done execute: git config pull.rebase true"
+      git rebase origin master --allow-unrelated-histories
+    }
+    if "Already up to date." != $git_out or "Successfully rebased and updated refs/heads/master." == $git_out {
+      print "building..."
+      zig build -Doptimize=ReleaseFast
       if ($env.LAST_EXIT_CODE == 1) {
+        print "build failed"
         mkdir -v ./zig-out/bin
         mv ./zls-bak ./zig-out/bin/zls
       } else {
-        rm ./zls-bak
+        print "build success"
+        if ('./zls-bak' | path exists) {
+          rm ./zls-bak
+        }
       }
     }
     if ('~/bin/zig-linux-x86_64/zls' | path exists) {
+      print "remove ~/bin/zig*/zls"
       rm ~/bin/zig-linux-x86_64/zls
     }
     if ('~/bin/zls' | path exists) {
+      print "remove ~/bin/zls"
       rm ~/bin/zls
     }
     if ('./zig-out/bin/zls' | path exists) {
+      print "copy zls"
       cp ./zig-out/bin/zls ~/bin/zig-linux-x86_64/zls
       ln -fs ~/bin/zig-linux-x86_64/zls ~/bin/zls
     }
