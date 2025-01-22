@@ -23,7 +23,8 @@ def "main replace" [profile_name: string] {
 	sudo apparmor_parser -r /etc/apparmor.d/($profile_name)
 }
 
-def "main remmove" [profile_name: string] {
+def "main remove" [profile_name: string] {
 	#Remove profile
 	sudo apparmor_parser -R /etc/apparmor.d/($profile_name)
 }
+

@@ -69,9 +69,13 @@ def "main update_zls" [] {
     if ('./zig-out/bin/zls' | path exists ) {
       cp ./zig-out/bin/zls ./zls-bak
     }
+    if "fatal: Not possible to fast-forward, aborting." == $git_out {
+      print "fatal: Not possible to fast-forward, aborting."
+      git merge --no-ff
+    }
     if "fatal: refusing to merge unrelated histories" == $git_out or "fatal: Not possible to fast-forward, aborting." == $git_out {
       print "if not done execute: git config pull.rebase true"
-      git rebase origin master --allow-unrelated-histories
+      git rebase origin master
     }
     if "Already up to date." != $git_out or "Successfully rebased and updated refs/heads/master." == $git_out {
       print "building..."
