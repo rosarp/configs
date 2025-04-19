@@ -78,8 +78,9 @@ def "main update_zls" [] {
       git rebase origin master
     }
     if "Already up to date." != $git_out or "Successfully rebased and updated refs/heads/master." == $git_out {
-      print "building..."
-      zig build -Doptimize=ReleaseFast
+      let zig_version = (cat ~/bin/zig.version)
+      print $"building ($zig_version)..."
+      $zig_version | zig build -Doptimize=ReleaseFast -Dversion-string=($in)
       if ($env.LAST_EXIT_CODE == 1) {
         print "build failed"
         mkdir -v ./zig-out/bin

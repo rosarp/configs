@@ -4,8 +4,13 @@ def main [] {
 }
 
 def "main create template" [path_to_binary: string] {
+	# sudo apt install install apparmor-utils
 	#create the apparmor template
 	sudo aa-easyprof ($path_to_binary)
+}
+
+def "main generate" [path_to_binary: string] {
+	sudo aa-genprof ($path_to_binary)
 }
 
 def "main enforce" [profile_name: string] {
